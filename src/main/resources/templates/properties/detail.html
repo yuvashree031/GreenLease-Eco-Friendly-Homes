@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${pageTitle}">Property Details - GreenLease</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" th:href="@{/}">
+                <i class="fas fa-leaf me-2"></i>GreenLease
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/properties}">Browse Properties</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/properties/add}">
+                            <i class="fas fa-plus-circle me-1"></i>Add Property
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <form th:action="@{/logout}" method="post" class="d-inline">
+                            <button type="submit" class="btn btn-link nav-link" style="text-decoration: none;">
+                                <i class="fas fa-sign-out-alt me-1"></i>Logout
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container py-4">
+        <!-- Back Button -->
+        <div class="mb-3">
+            <a th:href="@{/properties}" class="btn btn-outline-success">
+                <i class="fas fa-arrow-left me-2"></i>Back to Properties
+            </a>
+        </div>
+
+        <!-- Property Header -->
+        <div class="property-detail-header">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 th:text="${property.title}">Property Title</h1>
+                    <p class="lead mb-2">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        <span th:text="${property.fullAddress}">Full Address</span>
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <h3 class="me-4 mb-0">
+                            ₹<span th:text="${#numbers.formatDecimal(property.rent, 0, 0)}">0</span>/month
+                        </h3>
+                        <div class="eco-score-large">
+                            <span class="badge bg-warning text-dark fs-6 me-2">
+                                Eco Score: <strong th:text="${#numbers.formatDecimal(property.overallEcoScore, 1, 1)}">0.0</strong>/10
+                            </span>
+                            <span th:text="${property.ecoRatingDisplay}" 
+                                  th:class="'badge fs-6 ' + ${property.overallEcoScore >= 8.0 ? 'bg-success' : property.overallEcoScore >= 6.0 ? 'bg-info' : property.overallEcoScore >= 4.0 ? 'bg-warning text-dark' : 'bg-danger'}">
+                                Rating
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a th:href="@{/feedback/add/{id}(id=${property.id})}" class="btn btn-success btn-lg shadow">
+                        <i class="fas fa-star me-2"></i>Write Review & Rating
+                    </a>
+                    <p class="text-muted small mt-2 mb-0">Share your experience</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Property Details -->
+            <div class="col-lg-8">
+                <!-- Property Image -->
+                <div class="card mb-4">
+                    <img th:src="${property.imageUrl}" 
+                         th:alt="${property.title}" 
+                         class="card-img-top" style="height: 400px; object-fit: cover;">
+                </div>
+
+                <!-- Property Information -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4><i class="fas fa-info-circle me-2"></i>Property Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <strong>Property Type:</strong>
+                                <span th:text="${property.propertyType}" class="text-capitalize">Type</span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <strong>Square Footage:</strong>
+                                <span th:text="${#numbers.formatDecimal(property.squareFootage, 0, 0)}">0</span> sqft
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <strong>Bedrooms:</strong>
+                                <span th:text="${property.bedrooms}">0</span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <strong>Bathrooms:</strong>
+                                <span th:text="${property.bathrooms}">0</span>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <strong>Description:</strong>
+                            <p th:text="${property.description}" class="mt-2">Property description...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eco Features -->
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        <h4><i class="fas fa-leaf me-2"></i>Eco-Friendly Features</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="eco-features-grid">
+                            <div class="eco-feature-item">
+                                <i class="fas fa-thermometer-half fa-2x text-info mb-2"></i>
+                                <h6>Insulation Rating</h6>
+                                <div class="fs-4 fw-bold text-success">
+                                    <span th:text="${property.insulationRating}">0</span>/10
+                                </div>
+                            </div>
+                            
+                            <div class="eco-feature-item">
+                                <i class="fas fa-solar-panel fa-2x text-warning mb-2"></i>
+                                <h6>Solar Panels</h6>
+                                <div th:if="${property.solarPanels}">
+                                    <i class="fas fa-check-circle text-success fa-2x"></i>
+                                    <div class="mt-1">Rating: <strong th:text="${property.solarRating}">0</strong>/10</div>
+                                </div>
+                                <div th:unless="${property.solarPanels}">
+                                    <i class="fas fa-times-circle text-muted fa-2x"></i>
+                                    <div class="text-muted mt-1">Not Available</div>
+                                </div>
+                            </div>
+                            
+                            <div class="eco-feature-item">
+                                <i class="fas fa-tint fa-2x text-primary mb-2"></i>
+                                <h6>Water Conservation</h6>
+                                <div class="fs-4 fw-bold text-success">
+                                    <span th:text="${property.waterConservationRating}">0</span>/10
+                                </div>
+                            </div>
+                            
+                            <div class="eco-feature-item">
+                                <i class="fas fa-bolt fa-2x text-warning mb-2"></i>
+                                <h6>Energy Efficiency</h6>
+                                <div class="fs-4 fw-bold text-success">
+                                    <span th:text="${property.energyEfficiencyRating}">0</span>/10
+                                </div>
+                            </div>
+                            
+                            <div class="eco-feature-item">
+                                <i class="fas fa-tree fa-2x text-success mb-2"></i>
+                                <h6>Green Space Proximity</h6>
+                                <div class="fs-5 fw-bold text-success">
+                                    <span th:text="${#numbers.formatDecimal(property.greenSpaceProximity, 1, 1)}">0.0</span> km
+                                </div>
+                                <small class="text-muted">to nearest park</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tenant Feedback -->
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="fas fa-comments me-2"></i>Tenant Reviews 
+                            <span class="badge bg-secondary ms-2" th:text="${feedbackStats.totalCount}">0</span>
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div th:if="${feedbackStats.totalCount > 0}" class="row mb-4">
+                            <div class="col-md-4 text-center">
+                                <h5>Overall Rating</h5>
+                                <div class="fs-2 fw-bold text-warning">
+                                    <span th:text="${#numbers.formatDecimal(feedbackStats.averageRating, 1, 1)}">0.0</span>/5
+                                </div>
+                                <div class="star-rating" th:data-rating="${feedbackStats.averageRating}" data-max="5"></div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <h5>Eco Rating</h5>
+                                <div class="fs-2 fw-bold text-success">
+                                    <span th:text="${#numbers.formatDecimal(feedbackStats.averageEcoRating, 1, 1)}">0.0</span>/5
+                                </div>
+                                <div class="eco-star-rating" th:data-rating="${feedbackStats.averageEcoRating}" data-max="5"></div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <h5>Recommendation</h5>
+                                <div class="fs-2 fw-bold text-info">
+                                    <span th:text="${#numbers.formatDecimal(feedbackStats.recommendationPercentage, 0, 0)}">0</span>%
+                                </div>
+                                <small class="text-muted">would recommend</small>
+                            </div>
+                        </div>
+
+                        <!-- Individual Reviews -->
+                        <div th:each="feedback : ${feedbacks}" class="feedback-card p-3 mb-3">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <h6 class="mb-1" th:text="${feedback.tenantName}">Tenant Name</h6>
+                                    <small class="text-muted" th:text="${#temporals.format(feedback.createdAt, 'MMM dd, yyyy')}">Date</small>
+                                </div>
+                                <div class="text-end">
+                                    <div class="star-rating" th:data-rating="${feedback.overallRating}" data-max="5"></div>
+                                    <div th:if="${feedback.ecoRating > 0}">
+                                        <small class="text-muted">Eco: </small>
+                                        <span class="eco-star-rating" th:data-rating="${feedback.ecoRating}" data-max="5"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p th:text="${feedback.comment}" class="mb-2">Review comment...</p>
+                            <div th:if="${feedback.isRecommended}" class="badge bg-success">
+                                <i class="fas fa-thumbs-up me-1"></i>Recommended
+                            </div>
+                            <div th:if="${feedback.isVerified}" class="badge bg-info ms-1">
+                                <i class="fas fa-check-circle me-1"></i>Verified
+                            </div>
+                        </div>
+
+                        <!-- Write Review Button (when reviews exist) -->
+                        <div th:if="${!#lists.isEmpty(feedbacks)}" class="text-center mt-4 pt-3 border-top">
+                            <a th:href="@{/feedback/add/{id}(id=${property.id})}" class="btn btn-success btn-lg">
+                                <i class="fas fa-star me-2"></i>Write Your Review
+                            </a>
+                            <p class="text-muted mt-2 mb-0">Share your experience with this property</p>
+                        </div>
+
+                        <!-- No Reviews Message -->
+                        <div th:if="${#lists.isEmpty(feedbacks)}" class="text-center py-4">
+                            <i class="fas fa-comment-slash fa-3x text-muted mb-3"></i>
+                            <h5 class="text-muted">No reviews yet</h5>
+                            <p class="text-muted">Be the first to share your experience!</p>
+                            <a th:href="@{/feedback/add/{id}(id=${property.id})}" class="btn btn-success btn-lg">
+                                <i class="fas fa-star me-2"></i>Write the First Review
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Contact Card -->
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        <h5><i class="fas fa-phone me-2"></i>Contact Property</h5>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="contactName" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="contactName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="contactEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactMessage" class="form-label">Message</label>
+                                <textarea class="form-control" id="contactMessage" rows="4" 
+                                          placeholder="I'm interested in this property..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Property Summary -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5><i class="fas fa-calculator me-2"></i>Monthly Costs Estimate</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Rent:</span>
+                            <strong>₹<span th:text="${#numbers.formatDecimal(property.rent, 0, 0)}">0</span></strong>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Est. Utilities:</span>
+                            <strong th:text="'₹' + ${property.overallEcoScore >= 8.0 ? '80-120' : property.overallEcoScore >= 6.0 ? '120-180' : '180-250'}">₹120-180</strong>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <span><strong>Total Estimate:</strong></span>
+                            <strong class="text-success">
+                                ₹<span th:text="${#numbers.formatDecimal(property.rent + (property.overallEcoScore >= 8.0 ? 100 : property.overallEcoScore >= 6.0 ? 150 : 215), 0, 0)}">0</span>
+                            </strong>
+                        </div>
+                        <small class="text-muted mt-2 d-block">
+                            * Utilities estimate based on eco-rating. Actual costs may vary.
+                        </small>
+                    </div>
+                </div>
+
+                <!-- Similar Properties -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="fas fa-home me-2"></i>Similar Properties</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted">Similar eco-friendly properties in <span th:text="${property.city}">city</span></p>
+                        <a th:href="@{/properties(city=${property.city})}" class="btn btn-outline-success w-100">
+                            <i class="fas fa-search me-2"></i>View Similar Properties
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="text-center">
+                <p>&copy; 2025 GreenLease. Built with Spring Boot, Thymeleaf & JDBC.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script th:src="@{/js/app.js}"></script>
+</body>
+</html>

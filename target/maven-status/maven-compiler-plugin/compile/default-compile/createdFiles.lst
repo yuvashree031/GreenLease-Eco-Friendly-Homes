@@ -1,0 +1,14 @@
+com\greenlease\model\Feedback.class
+com\greenlease\repository\FeedbackRepository$1.class
+com\greenlease\model\Landlord.class
+com\greenlease\repository\PropertyRepository.class
+com\greenlease\repository\FeedbackRepository.class
+com\greenlease\model\Property.class
+com\greenlease\GreenLeaseApplication.class
+com\greenlease\service\PropertyService.class
+com\greenlease\service\PropertyService$EcoStatistics.class
+com\greenlease\controller\PropertyController.class
+com\greenlease\service\FeedbackService$FeedbackStatistics.class
+com\greenlease\controller\FeedbackController.class
+com\greenlease\repository\PropertyRepository$1.class
+com\greenlease\service\FeedbackService.class

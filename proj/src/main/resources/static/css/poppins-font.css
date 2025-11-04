@@ -1,0 +1,57 @@
+/* Google Fonts - Poppins Modern Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Apply Poppins font globally */
+* {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* Headings with semi-bold weight */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600;
+}
+
+/* Buttons with medium weight */
+.btn {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 500;
+}
+
+/* Navbar brand */
+.navbar-brand {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600;
+}
+
+/* Form labels */
+label, .form-label {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 500;
+}
+
+/* Card titles */
+.card-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600;
+}
+
+/* Lead text */
+.lead {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 400;
+}
+
+/* Bold text */
+strong, b, .fw-bold {
+    font-weight: 600;
+}
+
+/* Light text */
+.text-muted {
+    font-weight: 400;
+}
