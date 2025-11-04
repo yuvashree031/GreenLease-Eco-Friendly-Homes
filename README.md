@@ -74,7 +74,7 @@ Renters are increasingly interested in selecting homes based on energy efficienc
 ![Architecture Diagram](output/Architecture.jpg)
 
 ### **Customer Support Chatbot**
-![Customer Support](output/customerSupport.jpg)
+![Customer Support](output/CustomerSupport.jpg)
 
 ### **Chat Query Example**
 ![ChatBot Response](output/ChatBot.jpg)
