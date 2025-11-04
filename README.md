@@ -29,8 +29,9 @@ Renters are increasingly interested in selecting homes based on energy efficienc
 - Solar panel availability filter
 - Property type filtering
 
-### 3. Tenant Feedback System
+### 3. Tenant Feedback System & Customer Support
 - 5-star overall rating system
+- LLM Integration for ChatBot
 - Eco-specific ratings for each green feature
 - Written reviews and recommendations
 - Verified tenant feedback
@@ -47,6 +48,7 @@ Renters are increasingly interested in selecting homes based on energy efficienc
 - **Spring Boot Framework** - Complete MVC-based web application
 - **Thymeleaf** - Server-side rendering and front-end design
 - **JDBC** - Database connectivity with MySQL/PostgreSQL support
+- **Groq API Key** - LLM Integration for Real time ChatBot
 - **Eco-Rating System** - Comprehensive property sustainability scoring
 - **Tenant Feedback** - Review and rating system for properties
 - **Landlord Incentives** - Sustainability scoring for property owners
@@ -56,6 +58,7 @@ Renters are increasingly interested in selecting homes based on energy efficienc
 - **Backend**: Spring Boot 3.1.5 (Java 17)
 - **Frontend**: Thymeleaf, HTML
 - **Database**: MySQL
+- **API Key** : Groq
 - **Build Tool**: Maven
 - **Architecture**: Model-View-Controller (MVC)
 
@@ -79,10 +82,10 @@ Renters are increasingly interested in selecting homes based on energy efficienc
 ### Home Page
 ![Home](output/Home.jpg)
 
-### Home Page (Variant 2)
+### Home Page
 ![Home2](output/Home2.jpg)
 
-### Home Page (Variant 3)
+### Home Page
 ![Home3](output/Home3.jpg)
 
 ### Customer Support Chatbot
@@ -97,10 +100,10 @@ Renters are increasingly interested in selecting homes based on energy efficienc
 ### Filter Page
 ![Filter](output/Filter.jpg)
 
-### Additional Page 1
+### Add Properties
 ![Add1](output/Add1.jpg)
 
-### Additional Page 2
+### with Ratings
 ![Add2](output/Add2.jpg)
 
 ### Architecture Diagram
