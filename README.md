@@ -80,7 +80,7 @@ Renters are increasingly interested in selecting homes based on energy efficienc
 ![ChatBot Response](output/ChatBot.jpg)
 
 ### **Project Demo Video**
-[Watch GreenLease Demo](output/GreenLease_Eco_Friendly_Homes.mp4)
+[Watch GreenLease Demo](https://raw.githubusercontent.com/yuvashree031/GreenLease-Eco-Friendly-Homes/master/output/GreenLease_Eco_Friendly_Homes.mp4)
 
 ---
 
