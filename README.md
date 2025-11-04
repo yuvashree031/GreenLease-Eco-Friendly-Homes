@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**GreenLease** is a web app that helps renters find eco-friendly rental homes using an eco-rating system. It scores properties based on things like solar power, insulation, water saving, and green surroundings. Renters can search for greener homes, and landlords are encouraged to improve their property’s sustainability.
+**GreenLease** is a web app that helps renters find eco-friendly rental homes using an eco-rating system. It scores properties based on things like solar power, insulation, water saving, and green surroundings. Renters can search for greener homes, and landlords are encouraged to improve their property’s sustainability. Built with Spring-Boot, Java, ThymeLeaf(HTML), MySQL for db, and MVC Architecture.
 
 ### Problem Statement
 Renters are increasingly interested in selecting homes based on energy efficiency and sustainability. GreenLease addresses this need by creating a Java-based listing platform that rates properties on criteria such as:
