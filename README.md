@@ -70,15 +70,41 @@ Renters are increasingly interested in selecting homes based on energy efficienc
 
 ## Implementation Output
 
-### **Architecture Diagram**
-![Architecture Diagram](output/Architecture.jpg)
+### Login Page
+![Login](output/Login.jpg)
 
-### **Customer Support Chatbot**
+### Register Page
+![Register](output/Register.jpg)
+
+### Home Page
+![Home](output/Home.jpg)
+
+### Home Page (Variant 2)
+![Home2](output/Home2.jpg)
+
+### Home Page (Variant 3)
+![Home3](output/Home3.jpg)
+
+### Customer Support Chatbot
 ![Customer Support](output/CustomerSupport.jpg)
 
-### **Chat Query Example**
-![ChatBot Response](output/ChatBot.jpg)
+### ChatBot Query Example
+![ChatBot](output/ChatBot.jpg)
 
+### Properties Page
+![Properties](output/Properties.jpg)
+
+### Filter Page
+![Filter](output/Filter.jpg)
+
+### Additional Page 1
+![Add1](output/Add1.jpg)
+
+### Additional Page 2
+![Add2](output/Add2.jpg)
+
+### Architecture Diagram
+![Architecture](output/Architecture.jpg)
 
 ---
 
