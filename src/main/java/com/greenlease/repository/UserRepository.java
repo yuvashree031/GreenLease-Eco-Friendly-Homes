@@ -34,6 +34,8 @@ public class UserRepository {
         }
     };
 
+    //repository - user
+
     /**
      * Find user by username
      */
