@@ -2,16 +2,14 @@ package com.greenlease.model;
 
 import java.time.LocalDateTime;
 
-/**
- * Feedback model for tenant reviews and ratings
- */
+
 public class Feedback {
     private Long id;
     private Long propertyId;
     private String tenantName;
     private String tenantEmail;
-    private Integer overallRating; // 1-5 stars
-    private Integer ecoRating; // 1-5 stars for eco features
+    private Integer overallRating; 
+    private Integer ecoRating; 
     private String comment;
     private Boolean isVerified;
     private Boolean isRecommended;
@@ -22,7 +20,7 @@ public class Feedback {
     private Integer energyBillSatisfaction; // 1-5 stars
     private Integer solarSystemSatisfaction; // 1-5 stars
     private Integer waterEfficiencySatisfaction; // 1-5 stars
-    private Integer greenSpaceSatisfaction; // 1-5 stars
+    private Integer greenSpaceSatisfaction; 
     
     // Constructors
     public Feedback() {}
