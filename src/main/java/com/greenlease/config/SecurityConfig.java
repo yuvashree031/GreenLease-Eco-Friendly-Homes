@@ -1,5 +1,6 @@
 package com.greenlease.config;
 
+
 import com.greenlease.service.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,9 +14,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-/**
- * Security configuration for authentication
- */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
