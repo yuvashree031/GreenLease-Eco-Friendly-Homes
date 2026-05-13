@@ -1,7 +1,6 @@
 /* Google Fonts - Poppins Modern Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-/* Apply Poppins font globally */
+/* Poppins Font */
 * {
     font-family: 'Poppins', sans-serif !important;
 }
