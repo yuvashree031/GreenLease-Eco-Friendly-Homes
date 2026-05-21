@@ -1,5 +1,6 @@
 package com.greenlease.service;
 
+//import
 import com.greenlease.model.User;
 import com.greenlease.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
