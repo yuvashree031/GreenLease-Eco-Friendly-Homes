@@ -1,5 +1,5 @@
 package com.greenlease.model;
-
+12
 /**
  * User entity for authentication
  */
