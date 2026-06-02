@@ -1,5 +1,5 @@
 package com.greenlease.model;
-
+22
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
