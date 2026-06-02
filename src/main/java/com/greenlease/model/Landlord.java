@@ -1,5 +1,4 @@
 package com.greenlease.model;
-22
 import java.time.LocalDateTime;
 
 /**
