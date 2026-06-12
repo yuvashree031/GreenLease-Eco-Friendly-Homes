@@ -1,5 +1,4 @@
 package com.greenlease.config;
-//import
 
 import com.greenlease.service.UserService;
 import org.springframework.context.annotation.Bean;
