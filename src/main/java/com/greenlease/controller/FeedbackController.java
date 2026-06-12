@@ -1,6 +1,6 @@
 package com.greenlease.controller;
 
-//import statements
+
 import com.greenlease.model.Feedback;
 import com.greenlease.model.Property;
 import com.greenlease.service.FeedbackService;
