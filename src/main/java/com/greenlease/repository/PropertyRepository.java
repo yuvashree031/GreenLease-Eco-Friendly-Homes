@@ -1,6 +1,5 @@
 package com.greenlease.repository;
 
-
 import com.greenlease.model.Property;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -18,9 +17,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * JDBC Repository for Property entity
- */
+
 @Repository
 public class PropertyRepository {
     
