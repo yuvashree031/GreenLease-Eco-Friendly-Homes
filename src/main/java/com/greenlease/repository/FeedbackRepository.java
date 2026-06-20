@@ -1,6 +1,5 @@
 package com.greenlease.repository;
 
-
 import com.greenlease.model.Feedback;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -17,9 +16,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * JDBC Repository for Feedback entity
- */
 @Repository
 public class FeedbackRepository {
     
