@@ -12,9 +12,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * Repository for User entity
- */
+
 @Repository
 public class UserRepository {
 
