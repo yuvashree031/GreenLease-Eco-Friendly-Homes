@@ -1,8 +1,6 @@
 package com.greenlease.model;
 import java.time.LocalDateTime;
 
-
-//code
 /**
  * Landlord model representing property owners
  */
