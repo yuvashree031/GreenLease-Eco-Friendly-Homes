@@ -1,6 +1,5 @@
 package com.greenlease.controller;
 
-//imp
 import com.greenlease.model.User;
 import com.greenlease.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
