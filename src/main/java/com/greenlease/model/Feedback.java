@@ -1,8 +1,7 @@
 package com.greenlease.model;
 
 import java.time.LocalDateTime;
-
-
+//code
 public class Feedback {
     private Long id;
     private Long propertyId;
