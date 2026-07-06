@@ -1,5 +1,5 @@
 package com.greenlease.controller;
-
+//imp
 import com.greenlease.model.Feedback;
 import com.greenlease.model.Property;
 import com.greenlease.service.FeedbackService;
@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-/**
- * Controller for feedback and rating functionality
- */
+//Feedback and Rating Functionality
 @Controller
 @RequestMapping("/feedback")
 public class FeedbackController {
