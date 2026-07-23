@@ -1,6 +1,5 @@
 package com.greenlease.service;
 
-//import
 import com.greenlease.model.Property;
 import com.greenlease.repository.PropertyRepository;
 import com.greenlease.repository.FeedbackRepository;
